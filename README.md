@@ -1,2 +1,2 @@
-# broccoli-wiredep
-Inject Bower packages into your source code with Broccoli
+# broccoli-wiredependencies
+Inject stylesheets and javascript into your source code with Broccoli

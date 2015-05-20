@@ -1,6 +1,6 @@
 {
   "name": "broccoli-wiredep",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Inject Bower packages into your source code with Broccoli",
   "main": "index.js",
   "repository": {
