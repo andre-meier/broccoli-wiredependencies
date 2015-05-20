@@ -1,0 +1,29 @@
+{
+  "name": "broccoli-wiredep",
+  "version": "0.1.0",
+  "description": "Inject Bower packages into your source code with Broccoli",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andre-meier/broccoli-wiredep.git"
+  },
+  "keywords": [
+    "\"broccoli\"",
+    "\"broccoli-plugin\"",
+    "\"wiredep\"",
+    "\"bower\"",
+    "\"dependency\"",
+    "\"component\""
+  ],
+  "author": "André Meier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andre-meier/broccoli-wiredep/issues"
+  },
+  "homepage": "https://github.com/andre-meier/broccoli-wiredep",
+  "dependencies": {
+    "broccoli-writer": "^0.1.1",
+    "fs-extra": "^0.18.3",
+    "wiredep": "^2.2.2"
+  }
+}
