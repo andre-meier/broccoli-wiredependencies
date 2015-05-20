@@ -2,6 +2,7 @@ var Writer = require('broccoli-writer');
 var fs = require('fs-extra');
 var wiredep = require('wiredep');
 var path = require('path');
+var _ = require('lodash-node');
 
 var WireDependenciesPlugin = function (inputTree, options) {
   var self = this;
