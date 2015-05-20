@@ -1,7 +1,7 @@
 {
-  "name": "broccoli-wiredep",
+  "name": "broccoli-wiredependencies",
   "version": "0.2.0",
-  "description": "Inject Bower packages into your source code with Broccoli",
+  "description": "Inject stylesheets and javascript into your build with Broccoli",
   "main": "index.js",
   "repository": {
     "type": "git",
