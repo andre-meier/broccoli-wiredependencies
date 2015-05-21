@@ -144,8 +144,8 @@ WireDependencies.prototype.collectDependencies = function (srcDir, destDir) {
   if (self.options.bower) {
     var bowerPackages = wiredep();
 
-    dependencies.js = dependencies.js.concat(bowerPackages.js);
-    dependencies.css = dependencies.css.concat(bowerPackages.css);
+    dependencies.js = bowerPackages.js.concat(dependencies.js);
+    dependencies.css = bowerPackages.css.concat(dependencies.css);
   }
 
   _.forOwn(dependencies, function (value, type) {
