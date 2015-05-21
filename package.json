@@ -1,19 +1,23 @@
 {
   "name": "broccoli-wiredependencies",
-  "version": "0.2.1",
-  "description": "Inject stylesheets and javascript into your build with Broccoli",
+  "version": "0.2.2",
+  "description": "Inject stylesheets and javascript into your build with Broccoli the sprockets-way",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/andre-meier/broccoli-wiredep.git"
   },
   "keywords": [
-    "\"broccoli\"",
-    "\"broccoli-plugin\"",
-    "\"wiredep\"",
-    "\"bower\"",
-    "\"dependency\"",
-    "\"component\""
+    "broccoli",
+    "broccoli-plugin",
+    "wiredep",
+    "bower",
+    "dependency",
+    "component",
+    "js",
+    "assets",
+    "asset-handling",
+    "sprockets"
   ],
   "author": "André Meier",
   "license": "MIT",
