@@ -1,11 +1,11 @@
 {
   "name": "broccoli-wiredependencies",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Inject stylesheets and javascript into your build with Broccoli the sprockets-way",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andre-meier/broccoli-wiredep.git"
+    "url": "https://github.com/andre-meier/broccoli-wiredependencies.git"
   },
   "keywords": [
     "broccoli",
@@ -22,9 +22,9 @@
   "author": "André Meier",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andre-meier/broccoli-wiredep/issues"
+    "url": "https://github.com/andre-meier/broccoli-wiredependencies/issues"
   },
-  "homepage": "https://github.com/andre-meier/broccoli-wiredep",
+  "homepage": "https://github.com/andre-meier/broccoli-wiredependencies",
   "dependencies": {
     "broccoli-writer": "^0.1.1",
     "fs-extra": "^0.18.3",

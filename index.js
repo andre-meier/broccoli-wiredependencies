@@ -1,14 +1,16 @@
-var Writer = require('broccoli-writer');
-var fs = require('fs-extra');
-var wiredep = require('wiredep');
-var path = require('path');
-var _ = require('lodash-node');
+'use strict';
 
-var WireDependenciesPlugin = function (inputTree, options) {
+var _ = require('lodash-node');
+var fs = require('fs-extra');
+var path = require('path');
+var wiredep = require('wiredep');
+var Writer = require('broccoli-writer');
+
+function WireDependencies (inputTree, options) {
   var self = this;
 
-  if (!(this instanceof WireDependenciesPlugin)) {
-    return new WireDependenciesPlugin(inputTree, options);
+  if (!(this instanceof WireDependencies)) {
+    return new WireDependencies(inputTree, options);
   }
 
   self.inputTree = inputTree;
@@ -23,12 +25,12 @@ var WireDependenciesPlugin = function (inputTree, options) {
   self.options.paths = self.options.paths || {};
   self.options.paths.js = self.options.paths.js || 'js';
   self.options.paths.css = self.options.paths.css || 'styles';
-};
+}
 
-WireDependenciesPlugin.prototype = Object.create(Writer.prototype);
-WireDependenciesPlugin.prototype.constructor = WireDependenciesPlugin;
+WireDependencies.prototype = Object.create(Writer.prototype);
+WireDependencies.prototype.constructor = WireDependencies;
 
-WireDependenciesPlugin.prototype.wire = function (dependencies, srcDir, destDir) {
+WireDependencies.prototype.wire = function (dependencies, srcDir, destDir) {
   var self = this;
 
   var templates = {
@@ -90,7 +92,7 @@ WireDependenciesPlugin.prototype.wire = function (dependencies, srcDir, destDir)
 
 };
 
-WireDependenciesPlugin.prototype.findFiles = function (searchPath, fileExtension) {
+WireDependencies.prototype.findFiles = function (searchPath, fileExtension) {
   var self = this;
   var result = [];
 
@@ -112,7 +114,7 @@ WireDependenciesPlugin.prototype.findFiles = function (searchPath, fileExtension
   return result;
 };
 
-WireDependenciesPlugin.prototype.collectDependencies = function (srcDir, destDir) {
+WireDependencies.prototype.collectDependencies = function (srcDir, destDir) {
   var self = this;
 
   var result = {
@@ -150,7 +152,7 @@ WireDependenciesPlugin.prototype.collectDependencies = function (srcDir, destDir
   return result;
 };
 
-WireDependenciesPlugin.prototype.write = function (readTree, destDir) {
+WireDependencies.prototype.write = function (readTree, destDir) {
   var self = this;
 
   return readTree(self.inputTree).then(function (srcDir) {
@@ -159,4 +161,4 @@ WireDependenciesPlugin.prototype.write = function (readTree, destDir) {
   });
 };
 
-module.exports =  WireDependenciesPlugin;
+module.exports =  WireDependencies;
