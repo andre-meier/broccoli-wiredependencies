@@ -1,6 +1,6 @@
 {
   "name": "broccoli-wiredependencies",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Inject stylesheets and javascript into your build with Broccoli the sprockets-way",
   "main": "index.js",
   "repository": {

@@ -41,6 +41,10 @@ WireDependencies.prototype.wire = function (dependencies, srcDir, destDir) {
     '.haml': {
       'js': '%script{src: "{filePath}"}',
       'css': '%link{href: "{filePath}", rel: "stylesheet", type: "text/css"}'
+    },
+    '.jade': {
+      'js': 'script(src="{filePath}")',
+      'css': 'link(href="{filePath}", rel="stylesheet", type="text/css")'
     }
   };
 
@@ -52,6 +56,10 @@ WireDependencies.prototype.wire = function (dependencies, srcDir, destDir) {
     '.haml': {
       js: /-#\s*include:scripts/gi,
       css: /-#\s*include:styles/gi
+    },
+    '.jade': {
+      js: /\/\/\s*include:scripts/gi,
+      css: /\/\/\s*include:styles/gi
     }
   };
 
@@ -82,7 +90,13 @@ WireDependencies.prototype.wire = function (dependencies, srcDir, destDir) {
     });
 
     var indentationRegEx = /([ \t]*)/;
-    return data.replace(new RegExp(indentationRegEx.source + marker[extension][type].source), insertLines.join('\n'));
+
+    var searchValue = new RegExp(indentationRegEx.source + marker[extension][type].source);
+    var newValue = insertLines.join('\n');
+
+    data = data.replace(searchValue, newValue);
+
+    return data;
   };
 
   data = replaceMarkerWithIncludes('js', data);
