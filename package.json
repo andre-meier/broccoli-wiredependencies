@@ -1,11 +1,11 @@
 {
   "name": "broccoli-wiredependencies",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Inject stylesheets and javascript into your build with Broccoli the sprockets-way",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andre-meier/broccoli-wiredependencies.git"
+    "url": "https://github.com/andre-meier/broccoli-wiredependencies"
   },
   "keywords": [
     "broccoli",
@@ -32,6 +32,5 @@
   },
   "devDependencies": {
     "lodash-node": "^3.9.1"
-  },
-  "readme": "README.md"
+  }
 }

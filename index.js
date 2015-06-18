@@ -18,9 +18,8 @@ function WireDependencies (inputTree, options) {
 
   self.options.src = self.options.src || 'index.html';
 
-  self.options.cssIgnoreFiles = self.options.cssIgnoreFiles || [];
-
   self.options.bower = self.options.bower || true;
+  self.options.ignoreBowerStylesheets = self.options.ignoreBowerStylesheets || true;
 
   self.options.paths = self.options.paths || {};
   self.options.paths.js = self.options.paths.js || 'js';
@@ -144,18 +143,16 @@ WireDependencies.prototype.collectDependencies = function (srcDir, destDir) {
   if (self.options.bower) {
     var bowerPackages = wiredep();
 
+    if (!self.options.ignoreBowerStylesheets) {
+      dependencies.css = bowerPackages.css.concat(dependencies.css);
+    }
+
     dependencies.js = bowerPackages.js.concat(dependencies.js);
-    dependencies.css = bowerPackages.css.concat(dependencies.css);
   }
 
   _.forOwn(dependencies, function (value, type) {
     _.forEach(value, function (filepath) {
       var filename = path.basename(filepath);
-
-      if (self.options.cssIgnoreFiles.indexOf(filename) > -1) {
-        return;
-      }
-
       var target = self.options.paths[type] + '/' + filename;
       fs.copySync(filepath, destDir + '/' + target);
 

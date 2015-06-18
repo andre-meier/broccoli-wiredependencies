@@ -50,10 +50,11 @@ Default: *true*
 
 Defines, whether or not you want `broccoli-wiredependencies` to wire up your bower-packages. Internally using [wiredep](https://github.com/taptapship/wiredep) to resolve your bower packages and their dependencies.
 
-####cssIgnoreFiles
-Type: *{Array}*
+####ignoreBowerStylesheets
+Type: *{Boolean}*
+Default: *true*
 
-A list of css-files that should not be collected and injected to your `src`-file. Example: When using sass and the bootstrap bower package, you may not want `bootstrap.css` to be collected and included, since you'll import the sass in your `application.scss`.
+Defines, whether or not you want to wire up your sass or css from your bower dependencies. You may want to turn this on if you're using sass in include all your dependencies by hand.
 
 ####paths
 
