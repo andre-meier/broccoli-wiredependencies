@@ -24,6 +24,8 @@ function WireDependencies (inputTree, options) {
   self.options.paths = self.options.paths || {};
   self.options.paths.js = self.options.paths.js || 'js';
   self.options.paths.css = self.options.paths.css || 'styles';
+
+  self.options.wiredep = self.options.wiredep || {};
 }
 
 WireDependencies.prototype = Object.create(Writer.prototype);
@@ -141,7 +143,7 @@ WireDependencies.prototype.collectDependencies = function (srcDir, destDir) {
   };
 
   if (self.options.bower) {
-    var bowerPackages = wiredep();
+    var bowerPackages = wiredep(self.options.wiredep);
 
     if (!self.options.ignoreBowerStylesheets) {
       dependencies.css = bowerPackages.css.concat(dependencies.css);

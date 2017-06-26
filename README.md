@@ -35,7 +35,7 @@ Broccoli plugin.
 
 ###options
 
-####src
+#### src
 Type: *{String}*  
 Default: *index.html*
 
@@ -44,38 +44,45 @@ The template file where you want to include your css and javascript files. The f
 * For inclusion of you stylesheets:  `<!-- include:styles -->`  
 * For inclusion of you javascript files  `<!-- include:scripts -->`
 
-####bower
+#### bower
 Type: *{Boolean}*  
 Default: *true*
 
 Defines, whether or not you want `broccoli-wiredependencies` to wire up your bower-packages. Internally using [wiredep](https://github.com/taptapship/wiredep) to resolve your bower packages and their dependencies.
 
-####ignoreBowerStylesheets
+#### ignoreBowerStylesheets
 Type: *{Boolean}*
 Default: *true*
 
 Defines, whether or not you want to wire up your sass or css from your bower dependencies. You may want to turn this on if you're using sass in include all your dependencies by hand.
 
-####paths
+#### paths
 
-#####js:
+##### js:
 
 Type: *{String}*  
 Default: *js*
 
 The path were your javascript-dependencies are copied to.
 
-#####css:
+##### css:
 
 Type: *{String}*  
 Default: *js*
 
 The path were your stylesheet-dependencies are copied to.
 
+#### wiredep
+
+Type: {Hash}
+Default: {}
+
+Options you want to pass to [wiredep](https://github.com/taptapship/wiredep) when wiring up bower dependencies. You can check [wiredep Documentation](https://github.com/taptapship/wiredep/tree/v2.2.2#configuration) for further information about available options.
+
 ## License
 This project is licensed under the MIT License (MIT)
 
-Copyright (c) 2015 André Meier
+Copyright (c) 2017 André Meier
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
