@@ -74,7 +74,7 @@ The path were your stylesheet-dependencies are copied to.
 
 #### wiredep
 
-Type: {Hash}
+Type: *{Hash}*  
 Default: {}
 
 Options you want to pass to [wiredep](https://github.com/taptapship/wiredep) when wiring up bower dependencies. You can check [wiredep Documentation](https://github.com/taptapship/wiredep/tree/v2.2.2#configuration) for further information about available options.
